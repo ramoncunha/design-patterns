@@ -1,10 +1,20 @@
 package org.design.patterns.creational.abstract_factory;
 
-import java.awt.*;
-
 public class View {
 
-    private Label label;
-    private Button button;
+    private final Label label;
+    private final Button button;
 
+    public View(WidgeFactory widgeFactory) {
+        this.label = widgeFactory.createLabel();
+        this.button = widgeFactory.createButton();
+    }
+
+    public Label getLabel() {
+        return label;
+    }
+
+    public Button getButton() {
+        return button;
+    }
 }
